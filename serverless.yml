@@ -1,0 +1,14 @@
+service: CoDecs
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /src/functions/
+          method: get
